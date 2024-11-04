@@ -66,7 +66,7 @@ void check_function_owner(unsigned int index, unsigned long long addr)
 
 static void check_critical_syscalls(void)
 {
-    int i = 0;
+    unsigned int i = 0;
     unsigned long long addr = 0;
 
     for(i = 0; i < 512; i++)
@@ -74,7 +74,7 @@ static void check_critical_syscalls(void)
         addr = (unsigned long long)sys_call_table[i];
         if (addr == 0)
             break;
-        check_function_owner(addr);
+        check_function_owner(i, addr);
     }
 }
 
