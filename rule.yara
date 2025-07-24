@@ -1,4 +1,4 @@
 rule checkme
 {
-    condtion: all of them
+    condtion: any of them
 }
